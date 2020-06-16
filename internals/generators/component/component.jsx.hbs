@@ -1,0 +1,17 @@
+{{#if memo}}
+import React, { memo } from 'react';
+{{else}}
+import React from 'react';
+{{/if}}
+
+const {{ properCase name }} = (props) => {
+  return (
+    <div>{props.children}</div>
+  );
+};
+
+{{#if memo}}
+export default memo({{ properCase name }});
+{{else}}
+export default {{ properCase name }};
+{{/if}}

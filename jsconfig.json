@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    // should be 'commonjs' for correct 'go to definition' with re-export files
+    "module": "commonjs",
+    "baseUrl": ".",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "paths": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}

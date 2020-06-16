@@ -1,0 +1,39 @@
+import React from 'react';
+import { action } from '@storybook/addon-actions';
+
+import { Wrapper, Title, SourceCode, Doc, Code, Props } from 'utils/Story';
+
+import {{ properCase name }} from './{{ properCase name }}';
+import source from './{{ properCase name }}.source.md';
+
+export default {
+  title: '{{ properCase name }}',
+  component: {{ properCase name }}
+};
+
+export const Default = () => (
+  <div>
+    <Wrapper>
+      <Title>{{ properCase name }} component, default variant</Title>
+      <{{ properCase name }} onClick={action('clicked')}>Hello {{ properCase name }}</{{ properCase name }}>
+      <SourceCode code={source} />
+    </Wrapper>
+
+    <Doc>
+      General description about the
+      <Code>{{ properCase name }}</Code>
+      component.
+    </Doc>
+
+    <Props
+      data={[
+        {
+          name: 'label',
+          description: 'label description',
+          type: 'string',
+          defaultValue: 'undefined'
+        }
+      ]}
+    />
+  </div>
+);

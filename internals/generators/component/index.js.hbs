@@ -1,0 +1,6 @@
+{{#if wantLoadable}}
+export { default } from './Loadable';
+export { default as {{ properCase name }} } from './{{ properCase name }}';
+{{else}}
+export { default } from './{{ properCase name }}';
+{{/if}}
