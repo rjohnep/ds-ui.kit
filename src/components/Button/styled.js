@@ -7,14 +7,14 @@ const colorsByVariant = (theme, variant) => css`
   background: ${theme.palette[variant].main};
 `;
 
-const getSizes = (theme, size) => {
-  const sizeRatio = theme.button.sizeRatio[size];
-  const paddingRatio = theme.button.paddingRatio[size];
+const getSizes = ({ button }, size) => {
+  const sizeRatio = button.sizeRatio[size];
+  const paddingRatio = button.paddingRatio[size];
 
   return css`
-    font-size: ${14 * sizeRatio}px;
-    padding: 0 ${10 * paddingRatio}px;
-    line-height: ${36 * sizeRatio}px;
+    font-size: ${button.fontSizeBase * sizeRatio}px;
+    padding: 0 ${button.paddingBase * paddingRatio}px;
+    line-height: ${button.lineBase * sizeRatio}px;
   `;
 };
 
@@ -27,7 +27,7 @@ export const Wrapper = styled.button`
   justify-content: space-between;
 
   font-family: ${({ theme }) => theme.font.family};
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.button.fontWeightBase};
   border: 0 none;
   border-radius: 5px;
   transition: opacity 0.3s;

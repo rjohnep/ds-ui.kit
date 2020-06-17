@@ -17,10 +17,19 @@ Icon.propTypes = {
   glyph: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  variant: PropTypes.oneOf([
+    undefined,
+    'primary',
+    'secondary',
+    'danger',
+    'warning',
+    'success'
+  ])
 };
 
 Icon.defaultProps = {
+  variant: undefined,
   size: 'medium'
 };
 

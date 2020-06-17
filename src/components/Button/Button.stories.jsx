@@ -172,6 +172,14 @@ export const Default = () => (
           defaultValue: '-'
         },
         {
+          name: 'size',
+          description:
+            // eslint-disable-next-line max-len
+            'The possible sizes of Button, that impacts the overall Button padding, border radius, text size and line height. "size" will not impact any icon related sizing.',
+          type: 'small | medium | large',
+          defaultValue: 'medium'
+        },
+        {
           name: 'shadowed',
           description: 'Show the shadow around the button.',
           type: 'boolean',

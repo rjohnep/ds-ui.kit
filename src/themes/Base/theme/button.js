@@ -1,4 +1,8 @@
 export default {
+  fontWeightBase: 600,
+  fontSizeBase: 14,
+  paddingBase: 10,
+  lineBase: 36,
   sizeRatio: {
     small: 0.8,
     medium: 1,

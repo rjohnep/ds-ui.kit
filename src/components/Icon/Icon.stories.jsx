@@ -1,7 +1,9 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import { Wrapper, Title, SourceCode, Doc, Code, Props } from 'utils/Story';
+
+import calendarIcon from 'icons/calendar.svg';
+import removeIcon from 'icons/remove.svg';
 
 import Icon from './Icon';
 import source from './Icon.source.md';
@@ -14,24 +16,46 @@ export default {
 export const Default = () => (
   <div>
     <Wrapper>
-      <Title>Icon component, default variant</Title>
-      <Icon onClick={action('clicked')}>Hello Icon</Icon>
+      <Title>Colors</Title>
+
+      <Icon variant="primary" glyph={calendarIcon} />
+      <Icon variant="secondary" glyph={calendarIcon} />
+      <Icon variant="danger" glyph={calendarIcon} />
+      <Icon variant="warning" glyph={calendarIcon} />
+      <Icon variant="success" glyph={calendarIcon} />
+
+      <SourceCode code={source} />
+    </Wrapper>
+
+    <Wrapper>
+      <Title>Sizes</Title>
+
+      <Icon size="small" glyph={removeIcon} />
+      <Icon size="medium" glyph={removeIcon} />
+      <Icon size="large" glyph={removeIcon} />
+
       <SourceCode code={source} />
     </Wrapper>
 
     <Doc>
-      General description about the
-      <Code>Icon</Code>
-      component.
+      <Code>Icon</Code> provides support SVG in the sprite way, via
+      <Code>svg-sprite-loader</Code>
     </Doc>
 
     <Props
       data={[
         {
-          name: 'label',
-          description: 'label description',
+          name: 'variant',
+          description:
+            'Set the chosen variant with color schema. By default fill is "currentColor"',
           type: 'string',
-          defaultValue: 'undefined'
+          defaultValue: 'currentColor'
+        },
+        {
+          name: 'size',
+          description: 'The possible sizes of Icon.',
+          type: 'small | medium | large',
+          defaultValue: 'medium'
         }
       ]}
     />

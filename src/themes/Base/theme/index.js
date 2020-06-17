@@ -5,6 +5,7 @@ import button from './button';
 
 export default {
   palette,
+  button,
   font: {
     size: '14px',
     lineHeight: '1.4',
@@ -24,6 +25,5 @@ export default {
       medium: '24px',
       large: '36px'
     }
-  },
-  button
+  }
 };

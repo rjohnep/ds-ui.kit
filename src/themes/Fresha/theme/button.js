@@ -1,12 +1,15 @@
 export default {
+  fontSizeBase: 12,
+  paddingBase: 8,
+  lineBase: 28,
   sizeRatio: {
     small: 0.8,
     medium: 1,
     large: 1.5
   },
   paddingRatio: {
-    small: 0.6,
-    medium: 1,
-    large: 3
+    small: 1,
+    medium: 2,
+    large: 4
   }
 };

@@ -16,7 +16,13 @@ const Button = (props) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'danger', 'warning']),
+  variant: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'danger',
+    'warning',
+    'success'
+  ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   icon: PropTypes.shape({
     id: PropTypes.string.isRequired
