@@ -3,11 +3,18 @@ import React, { memo } from 'react';
 {{else}}
 import React from 'react';
 {{/if}}
+import PropTypes from 'prop-types';
+
+import { Wrapper } from './styled';
 
 const {{ properCase name }} = (props) => {
   return (
-    <div>{props.children}</div>
+    <Wrapper>{props.children}</Wrapper>
   );
+};
+
+{{ properCase name }}.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 {{#if memo}}

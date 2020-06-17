@@ -5,7 +5,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jest/recommended',
     'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'prettier/react'
   ],
   plugins: ['react', 'react-hooks', 'jest'],
   env: {
@@ -16,6 +18,7 @@ module.exports = {
   },
   settings: {
     react: {
+      // eslint-disable-next-line global-require
       version: require('./package.json').dependencies.react
     }
   },
@@ -27,6 +30,13 @@ module.exports = {
     }
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'none'
+      }
+    ],
     'max-len': ['error', { code: 100 }],
     indent: [
       2,
@@ -36,12 +46,7 @@ module.exports = {
       }
     ],
     'comma-dangle': ['error', 'never'],
-    'object-curly-newline': ['error', {
-      ObjectExpression: { consistent: true },
-      ObjectPattern: { multiline: true },
-      // 'ImportDeclaration': 'never',
-      ExportDeclaration: { multiline: true, minProperties: 3 }
-    }],
+    'object-curly-newline': ['error', { consistent: true }],
     'no-unused-vars': 2,
     'arrow-body-style': [2, 'as-needed'],
     'arrow-parens': ['error', 'always'],
@@ -57,6 +62,7 @@ module.exports = {
     'react/jsx-first-prop-new-line': [2, 'multiline'],
     'react/sort-comp': 0,
     'react/destructuring-assignment': 0,
-    'react/jsx-fragments': [2, 'element']
+    'react/jsx-fragments': 0,
+    'react/jsx-props-no-spreading': 0
   }
 };

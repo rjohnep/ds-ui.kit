@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 export const Wrapper = styled.div`
   width: 100%;
+  margin: 20px 0;
 
   pre {
     margin: 0;
@@ -24,8 +25,9 @@ const Button = styled.button`
   width: 50px;
   height: 25px;
   border: 0 none;
+  border-radius: 5px;
   background: ${({ active }) => (active ? '#6ee6b6' : '#e6e6e6')};
-  transition: background .3s;
+  transition: background 0.3s;
 
   :hover {
     background: ${({ active }) => (active ? '#77dfad' : '#ccc')};
@@ -38,10 +40,10 @@ const activeFade = keyframes`
 `;
 
 export const CopyButton = styled(Button)`
-  right: 90px;
+  right: 60px;
 
   :active {
-    animation: ${activeFade} .3s linear;
+    animation: ${activeFade} 0.3s linear;
   }
 `;
 export const SourceButton = styled(Button)``;

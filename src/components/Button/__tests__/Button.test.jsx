@@ -17,7 +17,9 @@ describe('<Button />', () => {
 
   // Un skip this test to use it
   it.skip('Should render and match the snapshot', () => {
-    const { container: { firstChild } } = render(<Button />);
+    const {
+      container: { firstChild }
+    } = render(<Button />);
 
     expect(firstChild).toMatchSnapshot();
   });

@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import Grid from '../Grid';
+import Icon from '../Icon';
 
-describe('<Grid />', () => {
+describe('<Icon />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
-    render(<Grid />);
+    render(<Icon />);
 
     expect(spy).not.toHaveBeenCalled();
   });
@@ -17,7 +17,9 @@ describe('<Grid />', () => {
 
   // Un skip this test to use it
   it.skip('Should render and match the snapshot', () => {
-    const { container: { firstChild } } = render(<Grid />);
+    const {
+      container: { firstChild }
+    } = render(<Icon />);
 
     expect(firstChild).toMatchSnapshot();
   });

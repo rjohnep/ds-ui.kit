@@ -3,25 +3,25 @@ import { action } from '@storybook/addon-actions';
 
 import { Wrapper, Title, SourceCode, Doc, Code, Props } from 'utils/Story';
 
-import Grid from './Grid';
-import source from './Grid.source.md';
+import Icon from './Icon';
+import source from './Icon.source.md';
 
 export default {
-  title: 'Grid',
-  component: Grid
+  title: 'Icon',
+  component: Icon
 };
 
 export const Default = () => (
   <div>
     <Wrapper>
-      <Title>Grid component</Title>
-      <Grid onClick={action('clicked')}>Hello Grid</Grid>
+      <Title>Icon component, default variant</Title>
+      <Icon onClick={action('clicked')}>Hello Icon</Icon>
       <SourceCode code={source} />
     </Wrapper>
 
     <Doc>
-      Short/General description about the
-      <Code>Grid</Code>
+      General description about the
+      <Code>Icon</Code>
       component.
     </Doc>
 

@@ -45,25 +45,35 @@ module.exports = {
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/{{properCase name}}.jsx',
+        path:
+          '../../src/components/{{properCase name}}/{{properCase name}}.jsx',
         templateFile: './component/component.jsx.hbs',
         abortOnFail: true
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/{{properCase name}}.stories.jsx',
+        path:
+          '../../src/components/{{properCase name}}/{{properCase name}}.stories.jsx',
         templateFile: './component/stories.jsx.hbs',
         abortOnFail: true
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/{{properCase name}}.source.md',
+        path: '../../src/components/{{properCase name}}/styled.js',
+        templateFile: './component/styled.js.hbs',
+        abortOnFail: true
+      },
+      {
+        type: 'add',
+        path:
+          '../../src/components/{{properCase name}}/{{properCase name}}.source.md',
         templateFile: './component/source.md.hbs',
         abortOnFail: true
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.jsx',
+        path:
+          '../../src/components/{{properCase name}}/__tests__/{{properCase name}}.test.jsx',
         templateFile: './component/test.jsx.hbs',
         abortOnFail: true
       }

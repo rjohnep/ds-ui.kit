@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 0 0 20px;
   padding: 10px 0;
 
@@ -39,5 +39,9 @@ export const Property = styled.code`
 `;
 
 export const DefaultValue = styled.div`
+  display: flex;
+  min-width: 5%;
   padding: 3px 15px;
+  justify-content: center;
+  align-items: center;
 `;
