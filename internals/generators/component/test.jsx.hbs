@@ -1,24 +1,47 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import '@testing-library/jest-dom/extend-expect';
+import 'jest-styled-components';
+
+import makeRendererWithTheme from 'utils/makeRendererWithTheme';
+import { theme as freshaTheme } from 'themes/Fresha';
+import { theme as partnersTheme } from 'themes/Partners';
 
 import {{ properCase name }} from '../{{ properCase name }}';
 
 describe('<{{ properCase name }} />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
-    render(<{{ properCase name }} />);
+    makeRendererWithTheme(() => <{{ properCase name }}>Hola</{{ properCase name }}>);
 
     expect(spy).not.toHaveBeenCalled();
   });
 
-  it('Expect to have additional unit tests specified', () => {
-    expect(true).toEqual(false);
-  });
+  describe('UI Regression', () => {
+    const regressionTests = (...themes) => {
+      it('should render correctly primary variant', () => {
+        const renderer = makeRendererWithTheme(
+          () => <{{ properCase name }}>{{ properCase name }}</{{ properCase name }}>,
+          ...themes
+        );
 
-  // Un skip this test to use it
-  it.skip('Should render and match the snapshot', () => {
-    const { container: { firstChild } } = render(<{{ properCase name }} />);
+        expect(renderer).toMatchSnapshot();
+      });
+    };
 
-    expect(firstChild).toMatchSnapshot();
+    describe('Base theme', () => {
+      regressionTests();
+    });
+
+    describe('Fresha theme', () => {
+      regressionTests(freshaTheme);
+    });
+
+    describe('Fresha Mobile theme', () => {
+      regressionTests(freshaTheme, freshaTheme.mobile);
+    });
+
+    describe('Partners theme', () => {
+      regressionTests(partnersTheme);
+    });
   });
 });

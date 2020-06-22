@@ -13,14 +13,47 @@ const themes = {
   partners: partnersTheme,
 };
 
+// hook
+const useWindowSize = () => {
+  const isClient = typeof window === 'object';
+
+  function getSize() {
+    return {
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined
+    };
+  }
+
+  const [windowSize, setWindowSize] = useState(getSize);
+
+  useEffect(() => {
+    if (!isClient) {
+      return false;
+    }
+
+    function handleResize() {
+      setWindowSize(getSize());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty array ensures that effect is only run on mount and unmount
+
+  return windowSize;
+};
+
 const ThemeDecorator = storyFn => {
   const [currentTheme, setCurrentTheme] = useState(baseTheme);
   const [currentThemeId, setCurrentThemeId] = useState('base');
+  const windowSize = useWindowSize();
 
   useEffect(() => {
-    const newTheme = currentThemeId === 'base' ? baseTheme : merge(baseTheme, themes[currentThemeId]);
+    const isMobile = windowSize.width < 1024;
+    const nextTheme = themes[currentThemeId];
+    const newTheme = currentThemeId === 'base' ? baseTheme : merge.all([baseTheme, nextTheme, isMobile && nextTheme.mobile || {}]);
+
     setCurrentTheme(newTheme);
-  }, [currentThemeId]);
+  }, [currentThemeId, windowSize.width]);
 
   return (
     <ThemeProvider theme={currentTheme}>

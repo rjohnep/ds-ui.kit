@@ -1,7 +1,11 @@
 import palette from './palette';
-import button from './button';
+import button, { buttonMobile } from './button';
 
 export default {
   palette,
-  button
+  button,
+
+  mobile: {
+    button: buttonMobile
+  }
 };

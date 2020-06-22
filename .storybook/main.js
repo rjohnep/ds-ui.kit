@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: ['../src/**/*.stories.jsx'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  addons: ['@storybook/addon-actions', '@storybook/addon-links', '@storybook/addon-viewport/register'],
   webpackFinal: async (config, { configType }) => {
     config.resolve.modules = [path.resolve('./src'), 'node_modules'];
 

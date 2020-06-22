@@ -19,6 +19,9 @@ const getSizes = ({ button }, size) => {
 };
 
 export const Wrapper = styled.button`
+  /* //demo styles */
+  margin: 0 0 20px;
+
   cursor: pointer;
 
   display: flex;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Wrapper, Title, SourceCode, Doc, Code, Props } from 'utils/Story';
+import { Wrapper, StoryTitle, SourceCode, Doc, Code, Props } from 'utils/Story';
 
 import calendarIcon from 'icons/calendar.svg';
 import removeIcon from 'icons/remove.svg';
@@ -16,7 +16,7 @@ export default {
 export const Default = () => (
   <div>
     <Wrapper>
-      <Title>Colors</Title>
+      <StoryTitle>Colors</StoryTitle>
 
       <Icon variant="primary" glyph={calendarIcon} />
       <Icon variant="secondary" glyph={calendarIcon} />
@@ -28,7 +28,7 @@ export const Default = () => (
     </Wrapper>
 
     <Wrapper>
-      <Title>Sizes</Title>
+      <StoryTitle>Sizes</StoryTitle>
 
       <Icon size="small" glyph={removeIcon} />
       <Icon size="medium" glyph={removeIcon} />

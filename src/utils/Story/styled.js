@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   margin: 0 10px 40px;
 `;
 
-export const Title = styled.h3`
+export const StoryTitle = styled.h3`
   display: flex;
   width: 100%;
 

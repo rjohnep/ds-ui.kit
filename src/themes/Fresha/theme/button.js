@@ -13,3 +13,9 @@ export default {
     large: 4
   }
 };
+
+export const buttonMobile = {
+  fontSizeBase: 10,
+  paddingBase: 2,
+  lineBase: 24
+};

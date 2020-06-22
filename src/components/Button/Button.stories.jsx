@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
-import { Wrapper, Title, SourceCode, Doc, Code, Props } from 'utils/Story';
+import { Wrapper, StoryTitle, SourceCode, Doc, Code, Props } from 'utils/Story';
 import arrowRightIcon from 'icons/arrow-right.svg';
 import removeIcon from 'icons/remove.svg';
 import searchIcon from 'icons/search.svg';
@@ -18,7 +18,7 @@ export default {
 export const Default = () => (
   <div>
     <Wrapper>
-      <Title>Variants</Title>
+      <StoryTitle>Variants</StoryTitle>
 
       <Button variant="primary" onClick={action('clicked')}>
         Primary
@@ -40,7 +40,7 @@ export const Default = () => (
     </Wrapper>
 
     <Wrapper>
-      <Title>Sizes</Title>
+      <StoryTitle>Sizes</StoryTitle>
 
       <Button size="small" onClick={action('clicked')}>
         Small
@@ -56,7 +56,7 @@ export const Default = () => (
     </Wrapper>
 
     <Wrapper>
-      <Title>With Icon</Title>
+      <StoryTitle>With Icon</StoryTitle>
 
       <Button icon={arrowRightIcon} onClick={action('clicked')}>
         Arrow Icon
@@ -75,7 +75,7 @@ export const Default = () => (
     </Wrapper>
 
     <Wrapper>
-      <Title>Reverse</Title>
+      <StoryTitle>Reverse</StoryTitle>
 
       <Button reverse icon={arrowRightIcon} onClick={action('clicked')}>
         Arrow Icon
@@ -109,7 +109,7 @@ export const Default = () => (
     </Wrapper>
 
     <Wrapper>
-      <Title>Shadowed</Title>
+      <StoryTitle>Shadowed</StoryTitle>
 
       <Button shadowed onClick={action('clicked')}>
         Primary
